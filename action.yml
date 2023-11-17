@@ -1,0 +1,18 @@
+# action.yml
+name: 'Deploy Aizo'
+description: 'Deploy Aizo backend'
+
+inputs:
+  args:
+    description: 'Serverless cli arguments'
+    required: true
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.args }}
+
+outputs:
+  result:
+    description: 'Serverless Framework result'
