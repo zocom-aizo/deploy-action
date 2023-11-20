@@ -7,4 +7,6 @@ COPY . .
 RUN npm i @serverless/compose --save-dev
 RUN npm i -g serverless
 
+RUN serverless refresh-outputs
+
 ENTRYPOINT [ "serverless", "$1" ]
